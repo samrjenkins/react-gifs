@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import FormSearch from './form_search'
-import Gif from './gif'
-import GifList from './gif_list'
+import React, { Component } from 'react';
+import FormSearch from './form_search';
+import Gif from './gif';
+import GifList from './gif_list';
 
 class App extends Component {
   constructor(props) {
-    super(props)
-    this.state = { selectedGifId: null, gifs: [] }
+    super(props);
+    this.state = { selectedGifId: null, gifs: [] };
   }
 
   render = () => {
@@ -22,16 +22,16 @@ class App extends Component {
           <GifList gifs={this.state.gifs} gifClickHandler={this.handleGifClick} />
         </div>
       </div>
-    )
+    );
   }
 
   handleGifClick = (evt) => {
-    this.setState({ selectedGifId: evt.target.dataset.gifId})
+    this.setState({ selectedGifId: evt.target.dataset.gifId });
   }
 
   handleFormSearchChange = (err, res) => {
-    this.setState({ gifs: res.data })
+    this.setState({ gifs: res.data });
   }
 }
 
-export default App
+export default App;
