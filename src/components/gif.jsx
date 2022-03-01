@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 
 class Gif extends Component {
-  render = () => <img className="gif" src={this.src()} onClick={this.props.clickHandler} data-gif-id={this.props.id} />
+  render = () => {
+    const { clickHandler, id } = this.props;
+    return (
+      <img className="gif" alt="" src={this.src()} onClick={clickHandler} data-gif-id={id} />
+    );
+  }
 
-  src = () => `https://media.giphy.com/media/${this.props.id}/giphy.gif`
+  src = () => {
+    const { id } = this.props;
+    return (
+      `https://media.giphy.com/media/${id}/giphy.gif`
+    );
+  }
 }
 
 export default Gif;

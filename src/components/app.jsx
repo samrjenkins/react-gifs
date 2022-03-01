@@ -10,16 +10,17 @@ class App extends Component {
   }
 
   render = () => {
+    const { selectedGifId, gifs } = this.state;
     return (
       <div>
         <div className="left-scene">
           <FormSearch changeHandler={this.handleFormSearchChange} />
           <div className="selected-gif">
-            <Gif id={this.state.selectedGifId} />
+            <Gif id={selectedGifId} />
           </div>
         </div>
         <div className="right-scene">
-          <GifList gifs={this.state.gifs} gifClickHandler={this.handleGifClick} />
+          <GifList gifs={gifs} gifClickHandler={this.handleGifClick} />
         </div>
       </div>
     );
